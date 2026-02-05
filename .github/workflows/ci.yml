@@ -51,6 +51,12 @@ jobs:
         run: |
           echo "Validate token..."
           curl -s -u "${{ secrets.SONAR_TOKEN }}:" https://sonarcloud.io/api/authentication/validate
+          
+      - name: Show report-task.txt (backend)
+        run: |
+          echo "===== back report-task.txt ====="
+          cat back/target/sonar/report-task.txt
+
 
       - name: SonarCloud Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@v1.1.0
@@ -121,6 +127,11 @@ jobs:
         run: |
           echo "Validate token..."
           curl -s -u "${{ secrets.SONAR_TOKEN }}:" https://sonarcloud.io/api/authentication/validate
+
+      - name: Show report-task.txt (frontend)
+        run: |
+          echo "===== front report-task.txt ====="
+          cat front/.scannerwork/report-task.txt
 
       - name: SonarCloud Quality Gate (frontend)
         uses: sonarsource/sonarqube-quality-gate-action@v1.1.0
