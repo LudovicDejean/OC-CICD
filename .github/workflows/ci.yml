@@ -35,8 +35,8 @@ jobs:
       - name: Run tests and SonarCloud analysis
         run: |
           mvn -X -B verify sonar:sonar \
-            -Dsonar.projectKey=ludovicdejean_bobapp-back \
-            -Dsonar.organization=ludovicdejean \
+            -Dsonar.projectKey=LudovicDejean_bobapp-back \
+            -Dsonar.organization=LudovicDejean \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=$SONAR_TOKEN  \
             -Dsonar.sonar.sources=src/main/java  \
@@ -103,8 +103,8 @@ jobs:
         with:
           projectBaseDir: front
           args: >
-            -Dsonar.projectKey=ludovicdejean_bobapp-front
-            -Dsonar.organization=ludovicdejean
+            -Dsonar.projectKey=LudovicDejean_bobapp-front
+            -Dsonar.organization=LudovicDejean
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.sources=src
             -Dsonar.exclusions=**/*.spec.ts,**/*.yml,**/*.yaml,**/*.json,**/angular.json,**/*.conf.js,**/*.config.js,**/*.properties,**/*.xml
@@ -148,7 +148,7 @@ jobs:
           context: ./back
           file: ./back/Dockerfile
           push: true
-          tags: ludovicdejean/bobapp-back:latest
+          tags: LudovicDejean/bobapp-back:latest
 
   publish-front:
     name: Publish frontend to Docker Hub
@@ -177,6 +177,6 @@ jobs:
           context: ./front
           file: ./front/Dockerfile
           push: true
-          tags: ludovicdejean/bobapp-front:latest
+          tags: LudovicDejean/bobapp-front:latest
 
 
