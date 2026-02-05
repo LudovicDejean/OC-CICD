@@ -47,6 +47,11 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      - name: Debug Sonar token validity
+        run: |
+          echo "Validate token..."
+          curl -s -u "${{ secrets.SONAR_TOKEN }}:" https://sonarcloud.io/api/authentication/validate
+
       - name: SonarCloud Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@master
         with:
@@ -111,6 +116,11 @@ jobs:
             -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Debug Sonar token validity
+        run: |
+          echo "Validate token..."
+          curl -s -u "${{ secrets.SONAR_TOKEN }}:" https://sonarcloud.io/api/authentication/validate
 
       - name: SonarCloud Quality Gate (frontend)
         uses: sonarsource/sonarqube-quality-gate-action@master
