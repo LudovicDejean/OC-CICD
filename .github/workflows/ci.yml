@@ -48,7 +48,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: SonarCloud Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@master
+        uses: sonarsource/sonarqube-quality-gate-action@main
         with:
           scanMetadataReportFile: back/target/sonar/report-task.txt
           pollingTimeoutSec: 600
@@ -113,7 +113,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: SonarCloud Quality Gate (frontend)
-        uses: sonarsource/sonarqube-quality-gate-action@master
+        uses: sonarsource/sonarqube-quality-gate-action@main
         with:
           scanMetadataReportFile: front/.scannerwork/report-task.txt
           pollingTimeoutSec: 600
