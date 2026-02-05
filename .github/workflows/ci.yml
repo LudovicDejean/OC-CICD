@@ -53,7 +53,7 @@ jobs:
           curl -s -u "${{ secrets.SONAR_TOKEN }}:" https://sonarcloud.io/api/authentication/validate
 
       - name: SonarCloud Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@master
+        uses: sonarsource/sonarqube-quality-gate-action@v1.1.0
         with:
           scanMetadataReportFile: back/target/sonar/report-task.txt
           pollingTimeoutSec: 600
@@ -123,7 +123,7 @@ jobs:
           curl -s -u "${{ secrets.SONAR_TOKEN }}:" https://sonarcloud.io/api/authentication/validate
 
       - name: SonarCloud Quality Gate (frontend)
-        uses: sonarsource/sonarqube-quality-gate-action@master
+        uses: sonarsource/sonarqube-quality-gate-action@v1.1.0
         with:
           scanMetadataReportFile: front/.scannerwork/report-task.txt
           pollingTimeoutSec: 600
