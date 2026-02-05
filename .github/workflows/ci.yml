@@ -36,7 +36,7 @@ jobs:
         run: |
           mvn -X -B verify sonar:sonar \
             -Dsonar.projectKey=ludovicdejean_bobapp-back \
-            -Dsonar.organization=LudovicDejean \
+            -Dsonar.organization=ludovicdejean \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=$SONAR_TOKEN  \
             -Dsonar.sonar.sources=src/main/java  \
@@ -104,7 +104,7 @@ jobs:
           projectBaseDir: front
           args: >
             -Dsonar.projectKey=ludovicdejean_bobapp-front
-            -Dsonar.organization=LudovicDejean
+            -Dsonar.organization=ludovicdejean
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.sources=src
             -Dsonar.exclusions=**/*.spec.ts,**/*.yml,**/*.yaml,**/*.json,**/angular.json,**/*.conf.js,**/*.config.js,**/*.properties,**/*.xml
