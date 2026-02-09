@@ -12,15 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      docker:
-        image: docker:19.03.12
-        options: --privileged
-        ports:
-          - 2375:2375
-        env:
-          DOCKER_TLS_CERTDIR: ""
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -73,12 +64,12 @@ jobs:
           git push https://x-access-token:${{ secrets.PAT }}@github.com:LudovicDejean/OC-CICD.git HEAD:main
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v4
+        uses: SonarSource/sonarqube-scan-action@v5.2.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
         with:
           projectBaseDir: .
           args: >
             -Dsonar.projectKey=LudovicDejean_OC-CICD
             -Dsonar.organization=ludovicdejean
-            -X
