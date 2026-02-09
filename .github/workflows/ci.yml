@@ -72,7 +72,7 @@ jobs:
           git push https://x-access-token:${{ secrets.PAT }}@github.com/fmmaesor/mod10.git HEAD:main
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@main
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
