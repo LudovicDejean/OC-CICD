@@ -72,7 +72,7 @@ jobs:
           git push https://x-access-token:${{ secrets.PAT }}@github.com:LudovicDejean/OC-CICD.git HEAD:main
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@main
+        uses: SonarSource/sonarcloud-github-action@v3
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
